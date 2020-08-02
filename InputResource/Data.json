@@ -1,0 +1,24 @@
+{
+	"environment": "QA",
+	"browserName": "chrome",
+	"userDetails": [
+		{
+			"firstName": "FirstName-1",
+			"middleName": "ML-1",
+			"lastName": "LastName-1",
+			"emailAddressText": "FirstName-1@mail.com",
+			"phoneNumber": "1234567890",
+			"userName": "Admin",
+			"password": "admin123"
+		},
+		{
+			"firstName": "FirstName-2",
+			"middleName": "ML-2",
+			"lastName": "LastName-2",
+			"emailAddressText": "FirstName-2@mail.com",
+			"phoneNumber": "999900000",
+			"userName": "Admin",
+			"password": "admin123"
+		}
+	]
+}

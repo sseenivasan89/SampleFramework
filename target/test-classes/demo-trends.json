@@ -1,0 +1,16 @@
+{
+  "buildNumbers" : [ "900", "900", "900" ],
+  "passedFeatures" : [ 1, 1, 1 ],
+  "failedFeatures" : [ 2, 2, 2 ],
+  "totalFeatures" : [ 3, 3, 3 ],
+  "passedScenarios" : [ 2, 2, 2 ],
+  "failedScenarios" : [ 2, 2, 2 ],
+  "totalScenarios" : [ 4, 4, 4 ],
+  "passedSteps" : [ 8, 8, 8 ],
+  "failedSteps" : [ 2, 2, 2 ],
+  "skippedSteps" : [ 2, 2, 2 ],
+  "pendingSteps" : [ 0, 0, 0 ],
+  "undefinedSteps" : [ 0, 0, 0 ],
+  "totalSteps" : [ 12, 12, 12 ],
+  "durations" : [ 119968278100, 138011675600, 135268212200 ]
+}

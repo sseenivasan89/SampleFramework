@@ -1,0 +1,619 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Demo Report</title>
+	<meta name="description" content="extent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="extent">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@832f979664f9d68bf618db3ac87498ac6c1a6390/logger/css/logger-style.css" type="text/css" />
+<style type="text/css">
+
+      
+        
+      
+		
+</style></head>
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+	<body class="standard">
+		<div class="app" id="app">
+<div id="aside" class="app-aside fade box-shadow-x folded dark">
+	<div class="sidenav modal-dialog dk">
+		<div class="navbar">
+			<a href="#" class="navbar-brand">
+			<span class="d-inline small"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></span>
+			</a>
+		</div>
+		<div class="flex hide-scroll">
+			<div class="scroll">
+				<div class="nav-border b-primary">
+					<ul class="nav bg">
+						<li>
+							<a href="index.html">
+							<span class="nav-icon">
+							<i class="fa fa-align-left"></i>
+							</span>
+							<span class="nav-text">Tests</span>
+							</a>
+						</li>
+												<li>
+							<a href="tag.html">
+							<span class="nav-icon">
+							<i class="fa fa-tag"></i>
+							</span>
+							<span class="nav-text">Tags</span>
+							</a>
+						</li>
+						<li>
+							<a href="exception.html">
+							<span class="nav-icon">
+							<i class="fa fa-warning"></i>
+							</span>
+							<span class="nav-text">Exceptions</span>
+							</a>
+						</li>
+						<li>
+							<a href="dashboard.html">
+							<span class="nav-icon">
+							<i class="fa fa-dashboard"></i>
+							</span>
+							<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="pb-2 hidden-folded"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="no-shrink">
+			<div class="nav-fold">
+				<a id="lightsout" class="d-flex p-2-3"><span><i class="fa fa-desktop"></i></span></a>
+				<div class="hidden-folded flex p-2-3 bg">
+					<div class="d-flex p-1">
+						<a href="http://github.com/extent-framework/extentreports" class="flex text-nowrap"><i class="fa fa-github"></i></a>
+						<a href="http://extentreports.com" class="px-2"><i class="fa fa-book"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>			<div id="content" class="app-content box-shadow-0" role="main">
+				<div id="content" class="app-content box-shadow-2 box-radius-2" role="main">
+					<div class="content-header white  box-shadow-2" id="content-header">
+						<div class="navbar navbar-expand-lg">
+							<div class="input-group flex mr-1">
+				              	<input id="qt" type="text" class="form-control px-0 no-bg no-border no-shadow search" placeholder="Search..." required="">
+				              	<span class="input-group-btn">
+				                	<button class="btn no-bg no-border no-shadow" type="button"><i class="fa fa-search text-muted text-xs"></i></button>
+				              	</span>
+				            </div>
+							<ul class="nav nav-xs flex-row no-border pull-right">
+								<li class="nav-item dropdown">
+									<a class="nav-link b-l" data-toggle="dropdown">
+									<span class="text-xs">
+									<i class="fa fa-warning"></i>
+									<i class="fa fa-caret-down"></i>
+									</span>
+									</a>
+									<div class="dropdown-menu pt-0 mt-2 animate fadeIn">
+										<a class="dropdown-item" href="#"><span class="tf" status="pass"><i class="fa fa-dot-circle-o text-success"></i>Pass</span></a>
+										<a class="dropdown-item" href="#"><span class="tf" status="fail"><i class="fa fa-dot-circle-o text-danger"></i>Fail</span></a>
+										
+										
+										
+										<a class="dropdown-item" href="#"><span class="tf" status="skip"><i class="fa fa-dot-circle-o text-blue"></i>Skip</span></a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#"><span class="tf" status="clear"><i class="fa fa-dot-circle-o text-warn"></i>Clear</span></a>
+									</div>
+								</li>
+						        <li class="nav-item dropdown">
+							        <a class="nav-link b-l" data-toggle="dropdown">
+							            <span class="text-xs">
+								      		<i class="fa fa-tag"></i>
+								      		<i class="fa fa-caret-down"></i>
+								        </span>
+							        </a>
+							        <div class="dropdown-menu pt-0 mt-2 animate fadeIn">
+						    	        <a class="dropdown-item" href="#"><span class="cf">@Smoke</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@Login</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@AddUser</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@AssignLeave</span></a>
+						    	        <div class="dropdown-divider"></div>
+						    	        <a class="dropdown-item" href="#"><span class="tf" status="clear"><i class="fa fa-dot-circle-o text-warn"></i>Clear</span></a>
+						    	      </div>
+						        </li>
+						        <li class="nav-item lightsout"><a class="nav-link b-l" href="#"><span><i class="fa fa-desktop"></i></span></a></li>
+								<li><a href="#" class="b-l"><span class="badge badge-pull">Demo Smoke Report</span></a></li>
+								<li><a href="#" class="b-l"><span class="badge badge-pull">4.0</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="content-main " id="content-main">
+						<div class="padding">
+							<div class="row justify-content-md-center">
+								<div class="col-md-8 col-sm-12">
+									<div class="logger-content">
+										<h6 class="mb-3 ml-1">Test Logs</h6>
+											<div class="tsc" status="fail">
+											<div class="st fail test l0" 
+												tags="@Smoke"
+												devices="">
+												<span class="tt">08.02.2020 12:17:30</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">[Login Feature] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Smoke</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st fail test l1" 
+												tags="@Login"
+												devices="">
+												<span class="tt">08.02.2020 12:17:30</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">|---[Login Feature] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Login</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags="@Smoke @Login"
+												devices="">
+												<span class="tt">08.02.2020 12:17:30</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Login Feature] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Smoke</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Login</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l3" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:17:30</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application as "Admin"] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:17:46</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application as "Admin"]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l3" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:17:46</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Logout form Application] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:17:49</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Logout form Application]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st fail test l2" 
+												tags="@Smoke @Login"
+												devices="">
+												<span class="tt">08.02.2020 12:18:08</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Login Feature] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Smoke</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Login</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st fail test l3" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:18:08</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application as "Admin1"] started</span>
+												
+												<div class="st fail">
+													<span class="tt">08.02.2020 12:19:14</span>&nbsp;
+													<span class="ts">fail</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application as "Admin1"]</span>
+													
+													<span class="td">threw an exception<br><textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Supplied function might have stalled
+Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'
+System info: host: 'WIN10H-K1F9EKP9', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.5'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:221)
+	at PageClasses.CommonMethods.loginToApplicationWithGivenUser(CommonMethods.java:75)
+	at StepDefinitions.CommonSteps.i_Login_to_Application_as(CommonSteps.java:28)
+	at ?.I Login to Application as "Admin1"(file:///C:/Projects/DemoFramework/src/test/java/Features/00_Login.feature:6)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at PageClasses.CommonMethods.loginToApplicationWithGivenUser(CommonMethods.java:75)
+	at StepDefinitions.CommonSteps.i_Login_to_Application_as(CommonSteps.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:27)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:49)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:51)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:67)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.testng.junit.JUnit4TestRunner.start(JUnit4TestRunner.java:74)
+	at org.testng.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:65)
+	at org.testng.TestRunner$1.run(TestRunner.java:652)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.runJUnitWorkers(TestRunner.java:843)
+	at org.testng.TestRunner.privateRunJUnit(TestRunner.java:681)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</textarea></span>
+												</div>
+											</div>
+											<div class="st skip test l3" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:19:14</span>&nbsp;
+												<span class="ts">skip</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Logout form Application] started</span>
+												
+												<div class="st skip">
+													<span class="tt">08.02.2020 12:19:14</span>&nbsp;
+													<span class="ts">skip</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Logout form Application]</span>
+													
+													<span class="td">Step skipped</span>
+												</div>
+											</div>
+											<div class="st fail test l3" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:19:14</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[StepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)] started</span>
+												
+												<div class="st fail">
+													<span class="tt">08.02.2020 12:19:51</span>&nbsp;
+													<span class="ts">fail</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---[StepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)]</span>
+													
+													<span class="td">threw an exception<br><textarea disabled class="code-block">org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=84.0.4147.105)
+Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'
+System info: host: 'WIN10H-K1F9EKP9', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\SSEENI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52399}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 3e90f952b66d295a9c24cd077fc18fd4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:196)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:129)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:639)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:303)
+	at StepDefinitions.Hooks.tearDown(Hooks.java:46)
+</textarea></span>
+												</div>
+											</div>
+											</div>
+											<div class="tsc" status="pass">
+											<div class="st pass test l0" 
+												tags="@Smoke"
+												devices="">
+												<span class="tt">08.02.2020 12:19:58</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">[Adding New User] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Smoke</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l1" 
+												tags="@Smoke @AddUser"
+												devices="">
+												<span class="tt">08.02.2020 12:19:58</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">|---[Adding New User] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Smoke</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @AddUser</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:19:58</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:20:10</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:20:10</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Goto Admin Page] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:20:15</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Goto Admin Page]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:20:15</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Add New User] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:20:26</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Add New User]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:20:26</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Logout form Application] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:20:28</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Logout form Application]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											</div>
+											<div class="tsc" status="fail">
+											<div class="st fail test l0" 
+												tags="@Smoke"
+												devices="">
+												<span class="tt">08.02.2020 12:20:43</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">[Assign Leave] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Smoke</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st fail test l1" 
+												tags="@Smoke @AssignLeave"
+												devices="">
+												<span class="tt">08.02.2020 12:20:43</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">|---[Assign Leave] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @Smoke</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @AssignLeave</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:20:43</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:20:55</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given I Login to Application]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:20:55</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Goto Assign Leave Page] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.02.2020 12:20:59</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Goto Assign Leave Page]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st fail test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:20:59</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Assign Leaves] started</span>
+												
+												<div class="st fail">
+													<span class="tt">08.02.2020 12:21:03</span>&nbsp;
+													<span class="ts">fail</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And I Assign Leaves]</span>
+													
+													<span class="td">threw an exception<br><textarea disabled class="code-block">java.lang.AssertionError: expected [] but found [Tests]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at PageClasses.AssignLeavePage.assignLeaves(AssignLeavePage.java:64)
+	at StepDefinitions.AssignLeaveSteps.i_Assign_Leaves(AssignLeaveSteps.java:23)
+	at ?.I Assign Leaves(file:///C:/Projects/DemoFramework/src/test/java/Features/02_AssignLeave.feature:8)
+</textarea></span>
+												</div>
+											</div>
+											<div class="st skip test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:21:03</span>&nbsp;
+												<span class="ts">skip</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Logout form Application] started</span>
+												
+												<div class="st skip">
+													<span class="tt">08.02.2020 12:21:03</span>&nbsp;
+													<span class="ts">skip</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then I Logout form Application]</span>
+													
+													<span class="td">Step skipped</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.02.2020 12:21:03</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[StepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.02.2020 12:21:04</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[StepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)]</span>
+													
+													<span class="td">this is my failure message</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.02.2020 12:21:04</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[StepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)]</span>
+													<span class="tm"><img class='r-img' onerror='this.style.display="none"' data-featherlight='../embedded1.png' src='../embedded1.png'></span>
+													<span class="td"></span>
+												</div>
+											</div>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@832f979664f9d68bf618db3ac87498ac6c1a6390/logger/js/logger-scripts.js"></script>
+<script type="text/javascript">
+
+
+      
+        $(document).ready(function() {
+        
+        });
+      
+		
+</script>	</body>
+</html>
